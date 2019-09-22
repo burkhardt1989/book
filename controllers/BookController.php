@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Book;
+use app\models\Type;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -69,9 +70,11 @@ class BookController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
+        $types = Type::find()->asArray()->all();
 
         return $this->render('create', [
             'model' => $model,
+            'types' => $types,
         ]);
     }
 
@@ -85,6 +88,7 @@ class BookController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $types = Type::find()->asArray()->all();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,6 +96,7 @@ class BookController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'types' => $types,
         ]);
     }
 

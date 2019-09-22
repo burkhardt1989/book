@@ -31,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'money',
-            'type_id',
+            [
+                'label' => '类型',
+                'value' => $model->getType()->name,
+            ],
             'create_time',
             'update_time',
         ],

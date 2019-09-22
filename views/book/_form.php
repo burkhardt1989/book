@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Book */
@@ -14,7 +15,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'money')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type_id')->textInput() ?>
+    <?= Html::label('类型') ?><br>
+    <?= Html::dropDownList('Book[type_id]', $model->type_id, ArrayHelper::map($types, 'id', 'name')) ?>
 
     <?= $form->field($model, 'create_time')->textInput() ?>
 
@@ -27,3 +29,4 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
