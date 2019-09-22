@@ -18,10 +18,6 @@ use yii\helpers\ArrayHelper;
     <?= Html::label('类型') ?><br>
     <?= Html::dropDownList('Book[type_id]', $model->type_id, ArrayHelper::map($types, 'id', 'name')) ?>
 
-    <?= $form->field($model, 'create_time')->textInput() ?>
-
-    <?= $form->field($model, 'update_time')->textInput() ?>
-
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

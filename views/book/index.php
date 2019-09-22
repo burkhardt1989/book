@@ -25,7 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'money',
-            // 'type',
             [
                 'label' => '类型',
                 'attribute' => 'type_id',
@@ -34,8 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->Type->name;
                 }
             ],
-            'create_time',
-            'update_time',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
