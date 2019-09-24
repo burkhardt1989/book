@@ -33,6 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->Type->name;
                 }
             ],
+            'date',
+            'create_time',
+            'update_time',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

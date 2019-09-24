@@ -31,7 +31,7 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['money'], 'number'],
             [['type_id'], 'integer'],
-            [['create_time', 'update_time'], 'safe'],
+            [['date', 'create_time', 'update_time'], 'safe'],
         ];
     }
 
@@ -44,6 +44,7 @@ class Book extends \yii\db\ActiveRecord
             'id' => '编号',
             'money' => '金额',
             'type_id' => '类型',
+            'date' => '日期',
             'create_time' => '创建时间',
             'update_time' => '修改时间',
         ];

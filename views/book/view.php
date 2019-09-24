@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => '类型',
                 'value' => $model->getType()->name,
             ],
+            'date',
             'create_time',
             'update_time',
         ],
